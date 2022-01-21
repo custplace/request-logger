@@ -28,31 +28,4 @@ class InstallDB extends Command
 
         $this->info('Installed BlogPackage');
     }
-
-    private function configExists($fileName)
-    {
-        return File::exists(config_path($fileName));
-    }
-
-    private function type()
-    {
-        return $this->confirm(
-            'Config file already exists. Do you want to overwrite it?',
-            false
-        );
-    }
-
-    private function publishConfiguration($forcePublish = false)
-    {
-        $params = [
-            '--provider' => "JohnDoe\BlogPackage\BlogPackageServiceProvider",
-            '--tag' => "config"
-        ];
-
-        if ($forcePublish === true) {
-            $params['--force'] = true;
-        }
-
-       $this->call('vendor:publish', $params);
-    }
 }
