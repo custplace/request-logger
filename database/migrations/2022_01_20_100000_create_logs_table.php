@@ -15,15 +15,15 @@ class CreateLogsTable extends Migration
     {
         Schema::create('requests_log', function (Blueprint $table) {
             $table->id();
-            $table->text('app',);          
-            $table->text('path',);          
-            $table->text('headers',);        
-            $table->text('method',);    
-            $table->text('request',);  
-            $table->text('response_code',);
-            $table->text('response_content',);
-            $table->text('duration',);
-            $table->text('ip',);
+            $table->string('app');
+            $table->string('path');
+            $table->longText('headers');
+            $table->string('method');
+            $table->longText('request')->nullable();
+            $table->integer('response_code')->nullable();
+            $table->longText('response_content')->nullable();
+            $table->float('duration');
+            $table->string('ip');
             $table->timestamps();
         });
     }
