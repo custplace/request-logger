@@ -1,0 +1,16 @@
+{
+    "name": "simo/request-logger",
+    "autoload": {
+        "psr-4": {
+            "Simo\\requestLogger\\": "src/"
+        }
+    },
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Simo\\requestLogger\\Providers\\requestLoggerServiceProvider"
+            ]
+        }
+    }
+}
