@@ -21,9 +21,9 @@ class InstallDB extends Command
             ['Mongo', 'Mysql'],
             1
         );
-        if($type == 'mongo')
+        if($type == 'Mongo')
         {
-            $this->command->info("Mongo been selected");
+            $this->info("Mongo been selected");
         }
 
         $this->info('Installed BlogPackage');

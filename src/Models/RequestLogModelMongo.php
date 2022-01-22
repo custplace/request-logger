@@ -10,10 +10,8 @@ use Illuminate\Http\Response;
 class RequestLogModel extends Model
 {
     use HasFactory;
-
-    protected $table = 'requests_log'; // for Mysql
-    /* protected $connection = 'mongodb'; */ // mongo db configuration
-    /* protected $collection = 'requests_log'; */ // mongo db configuration
+    protected $connection = 'mongodb'; // mongo db configuration
+    protected $collection = 'requests_log'; // mongo db configuration
 
     protected $casts = [
         'headers' => 'array',
