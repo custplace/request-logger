@@ -11,10 +11,7 @@ class requestLoggerServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $db_name = config('database.default');
-        if($db_name != 'mongo') {
-            $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
-        }
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
         $this->loadRoutesFrom(__DIR__.'/../../routes/request.php');
         $this->app->make(\Illuminate\Contracts\Http\Kernel::class)
             ->pushMiddleware(beforeMiddleware::class)

@@ -14,7 +14,7 @@ class AfterMiddleware
         $db_name = config('database.default');
         // Save request end time
         $request->end = microtime(true);
-        if($db_name === 'mongo') {
+        if($db_name === 'mongodb') {
             RequestLogModelMongo::logRequest($request, $response);
             return $response;
         }

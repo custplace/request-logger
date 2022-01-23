@@ -4,10 +4,11 @@ namespace Simo\requestLogger\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class RequestLogModel extends Model
+class RequestLogModelMongo extends Eloquent
 {
     use HasFactory;
     protected $connection = 'mongodb'; // mongo db configuration
@@ -21,7 +22,7 @@ class RequestLogModel extends Model
 
     public static function logRequest(Request $request, $response): void
     {
-        $log                   = new RequestLogModel();
+        $log                   = new RequestLogModelMongo();
         $log->app              = $request->getHost();
         $log->path             = $request->path();
         $log->headers          = $request->headers->all();
