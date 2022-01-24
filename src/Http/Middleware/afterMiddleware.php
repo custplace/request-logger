@@ -4,6 +4,7 @@ namespace Simo\requestLogger\Http\Middleware;
 
 use Closure;
 use Simo\requestLogger\Models\RequestLogModel;
+use DB;
 
 class AfterMiddleware
 {
@@ -13,9 +14,7 @@ class AfterMiddleware
         // Save request end time
         $request->end = microtime(true);
         $db_name = config('database.default');
-        $LogModel = new RequestLogModel;
-        $test = $LogModel->setConnection($db_name);
-        dd($test);
+        DB::setDefaultConnection($db_name);
         RequestLogModel::logRequest($request, $response);
 
         return $response;
