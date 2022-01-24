@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class RequestLogModel extends Model
+class RequestLogModel extends Eloquent
 {
     use HasFactory;
     protected $table = 'requests_log';

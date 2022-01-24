@@ -13,8 +13,6 @@ class AfterMiddleware
         $response = $next($request);
         // Save request end time
         $request->end = microtime(true);
-        $db_name = config('database.default');
-        DB::setDefaultConnection($db_name);
         RequestLogModel::logRequest($request, $response);
 
         return $response;
