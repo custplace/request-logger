@@ -11,7 +11,8 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class RequestLogModel extends Eloquent
 {
     use HasFactory;
-    protected $table = 'requests_log';
+    protected $connection = 'mongodb';
+    protected $collection = 'requests_log';
 
     protected $casts = [
         'headers' => 'array',
