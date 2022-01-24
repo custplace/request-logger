@@ -19,5 +19,7 @@ class requestLoggerServiceProvider extends ServiceProvider
         $this->app->make(\Illuminate\Contracts\Http\Kernel::class)
             ->pushMiddleware(beforeMiddleware::class)
             ->pushMiddleware(afterMiddleware::class);
+
+        dd('test');
     }
 }
