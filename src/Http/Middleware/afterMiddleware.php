@@ -14,7 +14,8 @@ class AfterMiddleware
         $request->end = microtime(true);
         $db_name = config('database.default');
         $LogModel = new RequestLogModel;
-        $LogModel->setConnection($db_name);
+        $test = $LogModel->setConnection($db_name);
+        dd($test);
         RequestLogModel::logRequest($request, $response);
 
         return $response;
