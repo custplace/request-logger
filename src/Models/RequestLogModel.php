@@ -10,7 +10,6 @@ use Illuminate\Http\Response;
 class RequestLogModel extends Model
 {
     use HasFactory;
-
     protected $table = 'requests_log';
 
     protected $casts = [
