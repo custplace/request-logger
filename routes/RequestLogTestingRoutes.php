@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Custplace\requestLogger\Models\RequestLog;
+use Custplace\requestLogger\Models\RequestLogModel;
 
 Route::middleware('api')->group(function () {
     Route::middleware('guest')->group(function () {

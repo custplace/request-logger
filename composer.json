@@ -2,14 +2,14 @@
     "name": "custplace/request-logger",
     "autoload": {
         "psr-4": {
-            "custplace\\requestLogger\\": "src/"
+            "Custplace\\requestLogger\\": "src/"
         }
     },
     "require": {},
     "extra": {
         "laravel": {
             "providers": [
-                "custplace\\requestLogger\\Providers\\RequestLogProvider"
+                "Custplace\\requestLogger\\Providers\\requestLogProvider"
             ]
         }
     }

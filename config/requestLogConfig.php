@@ -3,6 +3,6 @@
 use Illuminate\Support\Str;
 
 return [
-    'dsn' => env('DB_URI', 'mongodb+srv://root:pass@cluster0.vvsik.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
-    'database' => 'cluster0',
+    'connection_name' => 'mongodb',
+    'collection_name' => 'requests_log'
 ];

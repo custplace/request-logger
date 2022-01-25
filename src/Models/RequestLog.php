@@ -14,22 +14,23 @@ class RequestLog extends Eloquent
     protected $connection;
     protected $collection;
 
-    function __construct($connection, $collection) {
-        $this->$connection = $connection;
-        $this->$collection = $collection;
-    }
-
     protected $casts = [
         'headers' => 'array',
         'request' => 'array',
         'response' => 'array',
     ];
 
+    function __construct($connection, $collection) {
+        $this->connection = $connection;
+        $this->collection = $collection;
+    }
+
     public static function logRequest(Request $request, $response): void
     {
-        $collection = config('requestLogConfig.collection_name');
         $connection = config('requestLogConfig.connection_name');
-        $log                   = new RequestLogModel($connection, $collection);
+        $collection = config('requestLogConfig.collection_name');
+
+        $log                   = new RequestLog($connection, $connection);
         $log->app              = $request->getHost();
         $log->path             = $request->path();
         $log->headers          = $request->headers->all();

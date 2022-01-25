@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'custplace\\requestLogger\\' => array($baseDir . '/src'),
+    'Custplace\\requestLogger\\' => array($baseDir . '/src'),
 );
