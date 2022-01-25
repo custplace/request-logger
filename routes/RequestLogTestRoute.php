@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Simo\requestLogger\Models\RequestLogModel;
+use Custplace\requestLogger\Models\RequestLog;
 
 Route::middleware('api')->group(function () {
     Route::middleware('guest')->group(function () {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Simo\requestLogger\Http\Middleware;
+namespace Custplace\requestLogger\Http\Middleware;
 
 use Closure;
 
-class BeforeMiddleware
+class RequestLogBeforeMiddleware
 {
     public function handle($request, Closure $next)
     {

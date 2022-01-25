@@ -1,15 +1,15 @@
 {
-    "name": "simo/request-logger",
+    "name": "custplace/request-logger",
     "autoload": {
         "psr-4": {
-            "Simo\\requestLogger\\": "src/"
+            "custplace\\requestLogger\\": "src/"
         }
     },
     "require": {},
     "extra": {
         "laravel": {
             "providers": [
-                "Simo\\requestLogger\\Providers\\requestLoggerServiceProvider"
+                "custplace\\requestLogger\\Providers\\RequestLogProvider"
             ]
         }
     }
