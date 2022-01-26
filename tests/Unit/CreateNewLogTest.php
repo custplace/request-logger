@@ -13,17 +13,7 @@ class CreateNewLogTest extends TestCase
   /** @test */
   function a_log_has_a_title()
   {
-    $newLog = RequestLog::factory()->create([
-        'app'              => 'Fake Host',
-        'path'            =>  'Fake Path',
-        'headers'         =>  'Fake headers',
-        'method'           => 'Fake method',
-        'request'          => 'Fake request',
-        'response_code'    => 'Fake response code',
-        'response_content' => 'Fake content',
-        'duration'         => 'Fake duration',
-        'ip'               => 'Fake ip'
-    ]);
+    $newLog = RequestLog::factory()->create();
     $this->assertEquals('Fake Host', $newLog->app)
         ->assertNotEquals(RequestLog::where('id', $newLog->id)->first(), null);
   }
