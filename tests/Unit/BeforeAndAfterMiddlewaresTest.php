@@ -18,7 +18,10 @@ class BeforeAndAfterMiddlewaresTest extends TestCase
         //put the created request under the two middlewares below
         (new RequestLogAfterMiddleware())->handle($request);
         (new RequestLogAfterMiddleware())->handle($request, function ($request) {
-            $this->assertContains($request, $adUnitArr);
+            $this->assertJsonStructure(
+                'start',
+                'end',
+            );
         });
     }
 }
