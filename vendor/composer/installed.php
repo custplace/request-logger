@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '31204a7f5289d82e5f44244194ad4660c8cd0510',
+        'reference' => 'a4c3ab13443afe63d52e6a32171a04779f05da70',
         'name' => 'custplace/request-logger',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '31204a7f5289d82e5f44244194ad4660c8cd0510',
+            'reference' => 'a4c3ab13443afe63d52e6a32171a04779f05da70',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(

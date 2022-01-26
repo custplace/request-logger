@@ -10,7 +10,7 @@ use Custplace\requestLogger\Tests\TestCase;
 class BeforeAndAfterMiddlewaresTest extends TestCase
 {
     /** @test */
-    function it_capitalizes_the_request_title()
+    function it_test_middlewares_effects()
     {
         // create new request
         $request = new Request();

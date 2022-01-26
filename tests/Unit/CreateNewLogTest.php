@@ -11,7 +11,7 @@ class CreateNewLogTest extends TestCase
   use RefreshDatabase;
 
   /** @test */
-  function a_log_has_a_title()
+  function a_log_is_created()
   {
     $newLog = RequestLog::factory()->create();
     $this->assertEquals('Fake Host', $newLog->app)
