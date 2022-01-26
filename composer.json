@@ -2,15 +2,19 @@
     "name": "custplace/request-logger",
     "autoload": {
         "psr-4": {
-            "Custplace\\requestLogger\\": "src/"
+            "Custplace\\requestLogger\\": "src/",
+            "Custplace\\requestLogger\\Tests\\": "tests",
+            "Custplace\\requestLogger\\Database\\Factories\\": "database/factories"
         }
     },
-    "require": {},
     "extra": {
         "laravel": {
             "providers": [
                 "Custplace\\requestLogger\\Providers\\requestLogProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }
