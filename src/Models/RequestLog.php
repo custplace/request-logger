@@ -30,7 +30,7 @@ class RequestLog extends Eloquent
         return \Custplace\requestLogger\Database\Factories\requestLogFactory::new();
     }
 
-    public static function logRequest(Request $request, $response): void
+    public static function logRequest(Request $request, $response)
     {
         $connection = config('requestLogConfig.connection_name');
         $collection = config('requestLogConfig.collection_name');
@@ -47,5 +47,7 @@ class RequestLog extends Eloquent
         $log->ip               = $request->getClientIp();
 
         $log->save();
+
+        return $log->id;
     }
 }
