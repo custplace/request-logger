@@ -4,7 +4,7 @@ namespace Custplace\requestLogger\Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Custplace\requestLogger\Tests\TestCase;
-use Custplace\requestLogger\Tests\Models\RequestLog;
+use Custplace\requestLogger\Models\RequestLog;
 
 class CreateNewLogTest extends TestCase
 {
