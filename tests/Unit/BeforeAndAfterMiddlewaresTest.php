@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Custplace\requestLogger\Http\Middleware\RequestLogAfterMiddleware;
 use Custplace\requestLogger\Http\Middleware\RequestLogBeforeMiddleware;
 use Custplace\requestLogger\Tests\TestCase;
-use Custplace\requestLogger\Models\RequestLog;
+use Custplace\requestLogger\Tests\Models\requestLogTestModel;
 
 class BeforeAndAfterMiddlewaresTest extends TestCase
 {
@@ -17,8 +17,8 @@ class BeforeAndAfterMiddlewaresTest extends TestCase
         $request = new Request();
 
         //put the created request under the two middlewares below
-        (new RequestLogAfterMiddleware())->handle($request);
+        (new RequestLogAfterMiddleware())->handle(function ($request) { });
         $response = (new RequestLogAfterMiddleware())->handle($request, function ($request) { });
-        $this->assertNotEquals(RequestLog::where('id', $response->id)->first(), null);
+        $this->assertNotEquals(requestLogTestModel::where('id', $response->id)->first(), null);
     }
 }

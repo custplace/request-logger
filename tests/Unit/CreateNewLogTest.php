@@ -4,7 +4,7 @@ namespace Custplace\requestLogger\Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Custplace\requestLogger\Tests\TestCase;
-use Custplace\requestLogger\Models\RequestLog;
+use Custplace\requestLogger\Tests\Models\requestLogTestModel;
 
 class CreateNewLogTest extends TestCase
 {
@@ -13,8 +13,8 @@ class CreateNewLogTest extends TestCase
   /** @test */
   function a_log_is_created()
   {
-    $newLog = RequestLog::factory()->create();
+    $newLog = requestLogTestModel::factory()->create();
     $this->assertEquals('Fake Host', $newLog->app)
-        ->assertNotEquals(RequestLog::where('id', $newLog->id)->first(), null);
+        ->assertNotEquals(requestLogTestModel::where('id', $newLog->id)->first(), null);
   }
 }
