@@ -35,7 +35,7 @@ class RequestLog extends Eloquent
         $connection = config('requestLogConfig.connection_name');
         $collection = config('requestLogConfig.collection_name');
 
-        $log                   = new RequestLog($connection, $connection);
+        $log                   = new RequestLog($connection, $collection);
         $log->app              = $request->getHost();
         $log->path             = $request->path();
         $log->headers          = $request->headers->all();
