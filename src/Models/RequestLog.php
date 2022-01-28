@@ -20,8 +20,7 @@ class RequestLog extends Eloquent
         'response' => 'array',
     ];
 
-    function __construct($connection, $collection) {
-        $this->connection = $connection;
+    function __construct($collection) {
         $this->collection = $collection;
     }
 
@@ -32,10 +31,12 @@ class RequestLog extends Eloquent
 
     public static function logRequest(Request $request, $response)
     {
-        $connection = config('requestLogConfig.connection_name');
-        $collection = config('requestLogConfig.collection_name');
+        $connection = config('request-log.connection_name');
+        $collection = config('request-log.collection_name');
 
-        $log                   = new RequestLog($connection, $collection);
+        $log                   = new RequestLog($collection);
+        $log->setConnection($connection);
+
         $log->app              = $request->getHost();
         $log->path             = $request->path();
         $log->headers          = $request->headers->all();

@@ -12,7 +12,7 @@ class requestLogProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../../config/requestLogConfig.php' => config_path('requestLogConfig.php'),
+            __DIR__.'/../../config/request-log.php' => config_path('request-log.php'),
         ]);
         
         //$this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');

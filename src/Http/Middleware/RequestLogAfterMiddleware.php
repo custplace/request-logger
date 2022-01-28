@@ -13,8 +13,13 @@ class RequestLogAfterMiddleware
         $response = $next($request);
         // Save request end time
         $request->end = microtime(true);
-        $new_log_id = RequestLog::logRequest($request, $response);
-        $response->id = $new_log_id;
+        try {
+            $new_log_id = RequestLog::logRequest($request, $response);
+            $response->id = $new_log_id;
+        }
+        catch(\Exception $e) {
+            report($e);
+        }
 
         return $response;
     }
