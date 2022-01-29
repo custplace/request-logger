@@ -21,9 +21,8 @@ class BeforeAndAfterMiddlewaresTest extends TestCase
 
         //put the created request under the two middlewares below
         (new RequestLogBeforeMiddleware())->handle($request, function ($request) { });
-        $response = (new RequestLogAfterMiddlewareTest())->handle($request, function ($request) {
-            return $request;
-        });
+        $response = (new RequestLogAfterMiddlewareTest())->handle($request, function ($request) { });
+        dd($response);
         $this->assertNotEquals(RequestLogTest::where('id', $response->id)->first(), null);
     }
 }

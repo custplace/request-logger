@@ -11,6 +11,7 @@ class RequestLogAfterMiddlewareTest
     public function handle($request, Closure $next)
     {
         $response = $next($request);
+        dd($response);
         // Save request end time
         $request->end = microtime(true);
         try {
