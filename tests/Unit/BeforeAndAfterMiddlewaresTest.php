@@ -3,22 +3,27 @@
 namespace Custplace\requestLogger\Tests\Unit;
 
 use Illuminate\Http\Request;
-use Custplace\requestLogger\Http\Middleware\RequestLogAfterMiddleware;
+use Custplace\requestLogger\Http\Middleware\RequestLogAfterMiddlewareTest;
 use Custplace\requestLogger\Http\Middleware\RequestLogBeforeMiddleware;
 use Custplace\requestLogger\Tests\TestCase;
-use Custplace\requestLogger\Models\RequestLog;
+use Custplace\requestLogger\Models\RequestLogTest;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class BeforeAndAfterMiddlewaresTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     function it_test_middlewares_effects()
     {
         // create new request
-        $request = new Request();
+        $request = Request::create('/test', 'GET');
 
         //put the created request under the two middlewares below
-        (new RequestLogAfterMiddleware())->handle($request);
-        $response = (new RequestLogAfterMiddleware())->handle($request, function ($request) { });
-        $this->assertNotEquals(RequestLog::where('id', $response->id)->first(), null);
+        //(new RequestLogBeforeMiddleware())->handle($request, function ($request) { });
+        $response = (new RequestLogAfterMiddlewareTest())->handle($request, function ($request) {
+            return $request;
+        });
+        $this->assertNotEquals(RequestLogTest::where('id', $response->id)->first(), null);
     }
 }

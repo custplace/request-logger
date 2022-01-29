@@ -22,6 +22,7 @@ class ComposerStaticInit955b14b07c6aecdba81b2bb171c56c4b
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
@@ -117,6 +118,7 @@ class ComposerStaticInit955b14b07c6aecdba81b2bb171c56c4b
         'M' => 
         array (
             'Monolog\\' => 8,
+            'MongoDB\\' => 8,
         ),
         'L' => 
         array (
@@ -126,10 +128,19 @@ class ComposerStaticInit955b14b07c6aecdba81b2bb171c56c4b
             'League\\CommonMark\\' => 18,
             'Laravel\\SerializableClosure\\' => 28,
         ),
+        'J' => 
+        array (
+            'Jenssegers\\Mongodb\\' => 19,
+            'Jean85\\' => 7,
+        ),
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
             'Illuminate\\' => 11,
+        ),
+        'H' => 
+        array (
+            'Helmich\\MongoMock\\' => 18,
         ),
         'G' => 
         array (
@@ -379,6 +390,10 @@ class ComposerStaticInit955b14b07c6aecdba81b2bb171c56c4b
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'MongoDB\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mongodb/mongodb/src',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -399,6 +414,14 @@ class ComposerStaticInit955b14b07c6aecdba81b2bb171c56c4b
         array (
             0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
         ),
+        'Jenssegers\\Mongodb\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jenssegers/mongodb/src',
+        ),
+        'Jean85\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jean85/pretty-package-versions/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -407,6 +430,10 @@ class ComposerStaticInit955b14b07c6aecdba81b2bb171c56c4b
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
+        ),
+        'Helmich\\MongoMock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/helmich/mongomock/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

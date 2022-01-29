@@ -2,12 +2,12 @@
 
 namespace Custplace\requestLogger\Database\Factories;
 
-use Custplace\requestLogger\Models\RequestLog;
+use Custplace\requestLogger\Models\RequestLogTest;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class requestLogFactory extends Factory
 {
-    protected $model = RequestLog::class;
+    protected $model = RequestLogTest::class;
 
     public function definition()
     {
@@ -15,7 +15,7 @@ class requestLogFactory extends Factory
             'title'     => $this->faker->words(3, true),
             'body'      => $this->faker->paragraph,
             'author_id' => 999,
-            'app'              => $this->faker->words(3, true),
+            'app'              => 'Fake Host',
             'path'            =>  $this->faker->paragraph,
             'headers'         =>  $this->faker->paragraph,
             'method'           => $this->faker->words(3, true),

@@ -8,11 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class RequestLog extends Eloquent
+class RequestLogTest extends Model
 {
     use HasFactory;
-    protected $connection;
-    protected $collection;
 
     protected $casts = [
         'headers' => 'array',
@@ -20,22 +18,14 @@ class RequestLog extends Eloquent
         'response' => 'array',
     ];
 
-    function __construct(String $connection, String $collection) {
-        $this->collection = $collection;
-        $this->connection = $connection;
-    }
-
     protected static function newFactory()
     {
         return \Custplace\requestLogger\Database\Factories\requestLogFactory::new();
     }
 
-    public static function logRequest(Request $request, $response): void
+    public static function logRequest(Request $request, $response)
     {
-        $connection = config('request-log.connection_name');
-        $collection = config('request-log.collection_name');
-
-        $log                   = new RequestLog($connection, $collection);
+        $log                   = new RequestLogTest();
         /* $log->setConnection($connection); */
 
         $log->app              = $request->getHost();
@@ -49,5 +39,7 @@ class RequestLog extends Eloquent
         $log->ip               = $request->getClientIp();
 
         $log->save();
+
+        return $log->id;
     }
 }
