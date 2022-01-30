@@ -1,12 +1,11 @@
 <?php
 
-namespace Custplace\requestLogger\Http\Middleware;
+namespace App\Http\Middleware;
+use Custplace\requestLogger\Models\RequestLogTest;
 
 use Closure;
-use Custplace\requestLogger\Models\RequestLogTest;
-use DB;
 
-class RequestLogAfterMiddlewareTest
+class requestLogTestmiddleware
 {
     public function handle($request, Closure $next)
     {
@@ -14,8 +13,7 @@ class RequestLogAfterMiddlewareTest
         // Save request end time
         $request->end = microtime(true);
         try {
-            $new_log_id = RequestLogTest::logRequest($request, $response);
-            $response->id = $new_log_id;
+            RequestLogTest::logRequest($request, $response);
         }
         catch(\Exception $e) {
             report($e);
