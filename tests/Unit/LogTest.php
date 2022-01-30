@@ -5,8 +5,9 @@ namespace Custplace\requestLogger\Tests\Unit;
 use Illuminate\Http\Request;
 use Custplace\requestLogger\Http\Middleware\requestLogTestmiddleware;
 use Custplace\requestLogger\Tests\TestCase;
+use Custplace\requestLogger\Models\RequestLogTestModel;
 
-class requestLogTest extends TestCase
+class LogTest extends TestCase
 {
     /** @test */
     function it_tests_middlewares()
@@ -14,8 +15,7 @@ class requestLogTest extends TestCase
         // Given we have a request
         $request = new Request();
         $response = (new requestLogTestmiddleware())->handle($request, function ($request) { });
-        dd($response);
 
-        $this->assertStringContainsString('Hello World', $response);
+        $this->assertNotEquals(RequestLogTestModel::where('id', $response->id)->first(), null);
     }
 }

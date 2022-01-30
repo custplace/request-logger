@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class RequestLogTest extends Model
+class RequestLogTestModel extends Model
 {
     use HasFactory;
 
@@ -25,7 +25,7 @@ class RequestLogTest extends Model
 
     public static function logRequest(Request $request, $response)
     {
-        $log                   = new RequestLogTest();
+        $log                   = new RequestLogTestModel();
 
         $log->app              = $request->getHost();
         $log->path             = $request->path();
