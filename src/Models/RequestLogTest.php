@@ -26,7 +26,6 @@ class RequestLogTest extends Model
     public static function logRequest(Request $request, $response)
     {
         $log                   = new RequestLogTest();
-        /* $log->setConnection($connection); */
 
         $log->app              = $request->getHost();
         $log->path             = $request->path();
