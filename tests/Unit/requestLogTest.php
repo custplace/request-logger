@@ -9,13 +9,10 @@ use Custplace\requestLogger\Tests\TestCase;
 class requestLogTest extends TestCase
 {
     /** @test */
-    function it_checks_for_a_hello_word_in_response()
+    function it_tests_middlewares()
     {
         // Given we have a request
         $request = new Request();
-
-        // when we pass the request to this middleware,
-        // the response should contain 'Hello World'
         $response = (new requestLogTestmiddleware())->handle($request, function ($request) { });
         dd($response);
 
