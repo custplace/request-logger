@@ -25,11 +25,6 @@ class RequestLog extends Eloquent
         $this->connection = $connection;
     }
 
-    protected static function newFactory()
-    {
-        return \Custplace\requestLogger\Database\Factories\requestLogFactory::new();
-    }
-
     public static function logRequest(Request $request, $response): void
     {
         $connection = config('request-log.connection_name');
