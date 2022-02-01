@@ -39,6 +39,6 @@ class RequestLogTestModel extends Model
 
         $log->save();
 
-        return $log->id;
+        return $log;
     }
 }
