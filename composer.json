@@ -16,10 +16,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
-        "orchestra/testbench": "^6.24",
-        "helmich/mongomock": "^2.6"
+        "orchestra/testbench": "^6.24"
     },
     "require": {
-        "jenssegers/mongodb": "^3.8"
     }
 }
