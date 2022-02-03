@@ -20,7 +20,9 @@ php artisan vendor:publish
 Step #3
 After steps above, by default all your routes will be under a specific middelware, so no need to apply any kind of additional configuration on routes.
 
-U can now test the package by visiting /test.
+You can now test the package by visiting /test.
+
+You can disable package by sitting enabled function in configuration file to false.
 
 And you're done!
 
