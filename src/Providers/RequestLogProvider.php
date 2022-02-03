@@ -17,8 +17,11 @@ class requestLogProvider extends ServiceProvider
         
         //$this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
         $this->loadRoutesFrom(__DIR__.'/../../routes/RequestLogTestingRoutes.php');
-        $this->app->make(\Illuminate\Contracts\Http\Kernel::class)
+        $enabled = config('request-log.enabled');
+        if($enabled) {
+            $this->app->make(\Illuminate\Contracts\Http\Kernel::class)
             ->pushMiddleware(RequestLogBeforeMiddleware::class)
             ->pushMiddleware(RequestLogAfterMiddleware::class);
+        }
     }
 }
