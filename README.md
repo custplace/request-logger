@@ -7,17 +7,17 @@ How to install?
 
 Take following steps to install the package.
 
-Step #1
+# Step #1
 Install the package from Composer.
 
 ``composer require custplace/request-logger``
 
-Step #2
+# Step #2
 Publish congifuration file and configure your own collection name and driver name
 
 ``php artisan vendor:publish``
 
-Step #3
+# Step #3
 After steps above, by default all your routes will be under a specific middelware, so no need to apply any kind of additional configuration on routes.
 
 You can now test the package by visiting /test.
