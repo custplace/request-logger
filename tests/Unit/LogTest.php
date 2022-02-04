@@ -14,7 +14,7 @@ class LogTest extends TestCase
     function it_tests_middlewares()
     {
         // Given we have a request
-        $request = new Request();
+        $request  = new Request();
         (new RequestLogBeforeMiddleware())->handle($request, function ($request) { });
         $response = (new requestLogTestmiddleware())->handle($request, function ($request) { });
 

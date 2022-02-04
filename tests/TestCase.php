@@ -26,5 +26,5 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     // run the up() method of that migration class
     (new \CreateLogsTable)->up();
-    }
+  }
 }

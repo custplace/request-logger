@@ -15,8 +15,8 @@ class RequestLog extends Eloquent
     protected $collection;
 
     protected $casts = [
-        'headers' => 'array',
-        'request' => 'array',
+        'headers'  => 'array',
+        'request'  => 'array',
         'response' => 'array',
     ];
 
