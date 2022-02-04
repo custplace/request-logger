@@ -13,7 +13,7 @@ Install the package from Composer.
 ``composer require custplace/request-logger``
 
 # Step #2
-Publish congifuration file and configure your own collection name and driver name
+Publish configuration file and configure your own collection name and driver name
 
 ``php artisan vendor:publish``
 
