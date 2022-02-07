@@ -3,8 +3,7 @@
 namespace Custplace\requestLogger\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Custplace\requestLogger\Http\Middleware\RequestLogBeforeMiddleware;
-use Custplace\requestLogger\Http\Middleware\RequestLogAfterMiddleware;
+use Custplace\requestLogger\Http\Middleware\RequestLogMiddleware;
 use Illuminate\Routing\Router;
 
 class requestLogProvider extends ServiceProvider
@@ -15,12 +14,8 @@ class requestLogProvider extends ServiceProvider
             __DIR__.'/../../config/request-log.php' => config_path('request-log.php'),
         ]);
         $this->loadRoutesFrom(__DIR__.'/../../routes/RequestLogTestingRoutes.php');
-
-        $enabled = config('request-log.enabled');
-        if ($enabled) {
-            $this->app->make(\Illuminate\Contracts\Http\Kernel::class)
-            ->pushMiddleware(RequestLogBeforeMiddleware::class)
-            ->pushMiddleware(RequestLogAfterMiddleware::class);
-        }
+        
+        $router = $this->app->make(Router::class);
+        $router->aliasMiddleware('log', RequestLogMiddleware::class);
     }
 }

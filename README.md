@@ -22,10 +22,8 @@ After steps above, by default all your routes will be under a specific middelwar
 
 You can now test the package by visiting /test.
 
-You can disable package by sitting enabled function in configuration file to false.
-
 And you're done!
 
-Now every request that goes through your application will be logged and saved inside the collection you already specified in configuration file.
+Now every request under ``log middleware`` will be logged and saved inside the collection you already specified in configuration file.
 
 Thanks for using this package and I hope it'll help you in your further applications.
