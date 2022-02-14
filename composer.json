@@ -1,5 +1,14 @@
 {
     "name": "custplace/request-logger",
+    "description": "PHP package to log request for a Laravel application on MongoDB",
+    "keywords": ["laravel", "api", "logger", "request", "request logger", "mongodb"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Barry vd. Heuvel",
+            "email": "barryvdh@gmail.com"
+        }
+    ],
     "license": "MIT",
     "autoload": {
         "psr-4": {
