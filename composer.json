@@ -1,5 +1,6 @@
 {
     "name": "custplace/request-logger",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Custplace\\requestLogger\\": "src/",
@@ -19,5 +20,6 @@
         "orchestra/testbench": "^6.24"
     },
     "require": {
+        "jenssegers/mongodb": "^3.8"
     }
 }
